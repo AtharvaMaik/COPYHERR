@@ -69,6 +69,52 @@ node index.js
 ```
 Scan the generated QR code in your terminal to link your WhatsApp account.
 
+## 🚀 Detailed Setup & Execution
+
+Since the personal data has been removed for privacy, following these steps will allow you to reconstruct the "brain" of the project using your own chat history.
+
+### 1. Data Preparation
+- **Export Chat**: Export your WhatsApp chat (without media) as a `.txt` file.
+- **Placement**: Save it in the project root as `WhatsApp Chat with Aishani.txt` (or whatever name matches `extract_data.py`).
+
+### 2. Personality Extraction & Fine-Tuning
+- **Extract Dataset**: Run the extraction script to generate the training JSONL and memory profile.
+  ```bash
+  python extract_data.py
+  ```
+- **Fine-Tune (WSL/GPU)**: If you have a matching GPU in WSL/Ubuntu, use the Unsloth script to fine-tune Llama-3.
+  ```bash
+  bash train_wsl.sh
+  ```
+- **Import to Ollama**: Create the model in Ollama using the generated GGUF/weights.
+  ```bash
+  ollama create aishani_clone -f Modelfile.wsl
+  ```
+
+### 3. Rebuilding the RAG Memory
+- **Refine Data**: Prepare the chat logs for vectorization.
+  ```bash
+  cd whatsapp_bot
+  node refine_rag_data.js
+  ```
+- **Build Vectors**: Generate the high-dimensional embeddings.
+  ```bash
+  python build_vector_db.py
+  ```
+
+### 4. Running the Bot
+- **Start RAG Server**: Keep the memory server running in the background.
+  ```bash
+  cd whatsapp_bot
+  python rag_server.py
+  ```
+- **Start WhatsApp Client**: In a new terminal, launch the bot.
+  ```bash
+  cd whatsapp_bot
+  npm start
+  ```
+- **Scan QR**: Use your phone to scan the QR code displayed in the terminal.
+
 ---
 
 ## 🛠️ Tech Stack
