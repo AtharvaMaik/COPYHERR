@@ -1,0 +1,32 @@
+# --- SECURITY PURGE ---
+# Never upload raw chat data or training datasets
+*.txt
+*.jsonl
+whatsapp_bot/rag_vectors.json
+whatsapp_bot/rag_database_refined.json
+whatsapp_bot/social_graph.json.private
+memory.json
+
+# Dependencies
+node_modules/
+whatsapp_bot/node_modules/
+*.log
+
+# Infrastructure
+.wwebjs_auth/
+.wwebjs_cache/
+whatsapp_bot/.wwebjs_auth/
+whatsapp_bot/.wwebjs_cache/
+.env
+whatsapp_bot/.env
+
+# Large Binaries
+*.gguf
+*.bin
+Modelfile.gguf
+
+# OS/System
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]

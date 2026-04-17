@@ -1,0 +1,28 @@
+{
+    "family": {
+        "Person 1": {
+            "relationship": "Relative",
+            "context": "Brief context about the person."
+        },
+        "Person 2": {
+            "relationship": "Relative",
+            "context": "Brief context about the person."
+        }
+    },
+    "inner_circle": {
+        "Boyfriend/Girlfriend": {
+            "relationship": "Partner",
+            "context": "Context about your partner and common topics of conversation."
+        },
+        "Friend 1": {
+            "relationship": "Close Friend",
+            "context": "Details about a close friend and shared memories."
+        }
+    },
+    "uni_work": {
+        "Professor 1": {
+            "relationship": "Faculty",
+            "context": "Academic or professional context."
+        }
+    }
+}
