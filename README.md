@@ -1,4 +1,4 @@
-# 🌹 CopyHer: The AI Personality Replication Engine
+#  CopyHer: The AI Personality Replication Engine
 
 > [!TIP]
 > **Anyone can do this.** CopyHer makes it possible for anyone to export their WhatsApp chat and clone a person's digital persona. No complex AI setup required—just your data and our engine.
