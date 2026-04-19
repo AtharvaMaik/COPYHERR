@@ -16,7 +16,7 @@ The mission of CopyHer is to democratize digital persona replication. By leverag
 ## ✨ Core Features
 
 ### 🧠 Fine-Tuned Personality (Ollama + Unsloth)
-- **Identity Locked**: The model is hard-coded into the target persona (e.g., "Aishani"—a 20-year-old CS student with a playful, witty, and slightly sarcastic tone).
+- **Identity Locked**: The model is hard-coded into the target persona (e.g., "RAMESH"—a 20-year-old CS student with a playful, witty, and slightly sarcastic tone).
 - **Thinking Protocol**: Uses internal `<thought>` blocks to analyze tone and ensure non-robotic responses before outputting.
 - **WSL Bridge**: Optimized to run high-performance inference in a WSL2 (Ubuntu) environment while bridging to Windows for WhatsApp integration.
 
