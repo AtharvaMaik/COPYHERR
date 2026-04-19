@@ -14,6 +14,13 @@ COPYHERR is a research project for building a private, local conversational mode
 - Provides a WhatsApp Web bridge with QR login, typing delay simulation, session persistence, and multi-message replies.
 - Includes CLI scripts for one-shot testing and interactive local testing before connecting WhatsApp.
 
+## Training Signal
+
+- Successfully trained a local persona model on 80,000+ rows of WhatsApp chat data.
+- Converts 1 exported `.txt` chat into 2 private artifacts: `train.jsonl` for fine-tuning and `memory.json` for retrieval memory.
+- Uses QLoRA fine-tuning, GGUF export, Ollama inference, and a local RAG server for end-to-end private deployment.
+- Includes a guarded WhatsApp bridge that only auto-replies to 1 explicitly configured contact.
+
 ## Project Structure
 
 ```text
