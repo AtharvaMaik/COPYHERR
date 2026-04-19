@@ -2,7 +2,7 @@ import re
 import json
 import os
 
-def extract_lore(file_path):
+def extract_lore(file_path, target_personality):
     with open(file_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         
@@ -22,7 +22,7 @@ def extract_lore(file_path):
         match = date_regex.match(line)
         if match:
             # Process previous msg
-            if current_sender and current_sender.lower() == 'aishani':
+            if current_sender and current_sender.lower() == target_personality.lower():
                 # Skip media
                 if '<media omitted>' not in current_msg.lower():
                     # Check if it has lore keywords
@@ -38,7 +38,7 @@ def extract_lore(file_path):
                 current_msg += " " + line
                 
     # Process the very last message in the file
-    if current_sender and current_sender.lower() == 'aishani' and '<media omitted>' not in current_msg.lower():
+    if current_sender and current_sender.lower() == target_personality.lower() and '<media omitted>' not in current_msg.lower():
         if lore_keywords.search(current_msg) and len(current_msg.split()) > 3:
             rag_database.append(current_msg)
             
@@ -48,11 +48,13 @@ def extract_lore(file_path):
 
 if __name__ == "__main__":
     pwd = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(pwd, "WhatsApp Chat with Aishani.txt")
+    export_path = os.environ.get("WHATSAPP_EXPORT_PATH", "whatsapp_chat.txt")
+    file_path = export_path if os.path.isabs(export_path) else os.path.join(pwd, export_path)
+    target_personality = os.environ.get("TARGET_PERSONA_NAME", "Target Persona")
     
     print("Starting Deep Lore RAG Extraction...")
-    rag_data = extract_lore(file_path)
-    print(f"Extracted {len(rag_data)} Lore Sentences about Aishani!")
+    rag_data = extract_lore(file_path, target_personality)
+    print(f"Extracted {len(rag_data)} memory sentences for the target persona.")
     
     out_json = os.path.join(pwd, "whatsapp_bot", "rag_database.json")
     with open(out_json, 'w', encoding='utf-8') as f:

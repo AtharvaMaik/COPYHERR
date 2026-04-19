@@ -50,7 +50,7 @@ def parse_whatsapp(file_path):
         
     return messages
 
-def build_dataset(messages, target_personality="Aishani", max_samples=8000):
+def build_dataset(messages, target_personality="Target Persona", max_samples=8000):
     dataset = []
     
     # We want to group by 30 minute intervals.
@@ -145,14 +145,16 @@ def build_memory(memory_corpus):
 
 if __name__ == "__main__":
     pwd = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(pwd, "WhatsApp Chat with Aishani.txt")
+    export_path = os.environ.get("WHATSAPP_EXPORT_PATH", "whatsapp_chat.txt")
+    file_path = export_path if os.path.isabs(export_path) else os.path.join(pwd, export_path)
+    target_personality = os.environ.get("TARGET_PERSONA_NAME", "Target Persona")
     
     print("Parsing WhatsApp Export...")
     messages = parse_whatsapp(file_path)
     
     print(f"Total messages parsed: {len(messages)}")
     
-    dataset, memory_corpus = build_dataset(messages, target_personality="Aishani")
+    dataset, memory_corpus = build_dataset(messages, target_personality=target_personality)
     
     print(f"Total SFT pairs generated: {len(dataset)}")
     

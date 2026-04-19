@@ -1,7 +1,7 @@
 {
-  "name": "aishani-whatsapp-bot",
+  "name": "copyherr-whatsapp-bot",
   "version": "1.0.0",
-  "description": "WhatsApp bridge for Aishani personality clone",
+  "description": "WhatsApp bridge for a local target-persona clone",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

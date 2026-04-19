@@ -3,9 +3,13 @@
 *.txt
 *.jsonl
 whatsapp_bot/rag_vectors.json
+whatsapp_bot/rag_database.json
 whatsapp_bot/rag_database_refined.json
 whatsapp_bot/social_graph.json.private
 memory.json
+whatsapp_bot/last_payload.json
+whatsapp_bot/cli_payload.json
+whatsapp_bot/last_qr.txt
 
 # Dependencies
 node_modules/
