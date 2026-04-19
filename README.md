@@ -1,4 +1,7 @@
-# 🌹 CopyHer: The Aishani Persona AI
+# 🌹 CopyHer: The AI Personality Replication Engine
+
+> [!TIP]
+> **Anyone can do this.** CopyHer makes it possible for anyone to export their WhatsApp chat and clone a person's digital persona. No complex AI setup required—just your data and our engine.
 
 A state-of-the-art personality cloning system that reproduces a specific individual's conversational style, memories, and social dynamics. Built with a fine-tuned LLM, vector-based RAG memory, and a seamless WhatsApp integration.
 
@@ -6,10 +9,14 @@ A state-of-the-art personality cloning system that reproduces a specific individ
 ![LLM-FineTuning](https://img.shields.io/badge/Model-Llama3--Ollama-blue)
 ![RAG-Enhanced](https://img.shields.io/badge/Memory-RAG--Vector-orange)
 
+## 🎯 The Clone Protocol
+
+The mission of CopyHer is to democratize digital persona replication. By leveraging raw WhatsApp exports, we can extract the unique "soul" of a conversation—slang, sarcasm, emojis, and all—and transplant it into a high-performance LLM.
+
 ## ✨ Core Features
 
 ### 🧠 Fine-Tuned Personality (Ollama + Unsloth)
-- **Identity Locked**: The model is hard-coded into the "Aishani" persona—a 20-year-old CS student with a playful, witty, and slightly sarcastic tone.
+- **Identity Locked**: The model is hard-coded into the target persona (e.g., "Aishani"—a 20-year-old CS student with a playful, witty, and slightly sarcastic tone).
 - **Thinking Protocol**: Uses internal `<thought>` blocks to analyze tone and ensure non-robotic responses before outputting.
 - **WSL Bridge**: Optimized to run high-performance inference in a WSL2 (Ubuntu) environment while bridging to Windows for WhatsApp integration.
 
@@ -73,9 +80,10 @@ Scan the generated QR code in your terminal to link your WhatsApp account.
 
 Since the personal data has been removed for privacy, following these steps will allow you to reconstruct the "brain" of the project using your own chat history.
 
-### 1. Data Preparation
-- **Export Chat**: Export your WhatsApp chat (without media) as a `.txt` file.
-- **Placement**: Save it in the project root as `WhatsApp Chat with Aishani.txt` (or whatever name matches `extract_data.py`).
+### 1. Data Preparation (Universal Process)
+- **Select a Target**: Choose any person you have a long chat history with.
+- **Export Chat**: Open the chat on WhatsApp -> Settings -> Export Chat -> Without Media. 
+- **Process**: Save the resulting `.txt` file in the project root. This is the only "fuel" the AI needs to clone their personality.
 
 ### 2. Personality Extraction & Fine-Tuning
 - **Extract Dataset**: Run the extraction script to generate the training JSONL and memory profile.
