@@ -1,5 +1,8 @@
 # COPYHERR: WhatsApp Persona Training Engine
 
+![Language](https://img.shields.io/badge/Language-Python-blue)
+![License](https://img.shields.io/badge/License-No%20license%20specified-lightgrey)
+
 COPYHERR is a research project for building a private, local conversational model from your own exported WhatsApp chats. It turns a WhatsApp text export into supervised fine-tuning data, builds a vector memory store for retrieval-augmented generation, and connects the trained model to a WhatsApp Web bridge or CLI test harness.
 
 > Privacy first: this repository contains only code and templates. Do not commit raw chat exports, generated training data, vector databases, session files, model weights, or private relationship graphs.
@@ -269,6 +272,15 @@ Keep these private:
 - Sentence Transformers for semantic memory search.
 - `whatsapp-web.js` for WhatsApp integration.
 
-## License
+## Contributing
 
+Contributions are welcome. You can help by reporting bugs, suggesting features, improving documentation, or opening pull requests.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make a focused change.
+4. Test the project locally when possible.
+5. Open a pull request with a clear summary of what changed.
+
+## License
 Created for personal AI research and local experimentation.
