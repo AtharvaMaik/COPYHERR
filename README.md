@@ -5,8 +5,6 @@
 ![Language](https://img.shields.io/badge/Language-Shell-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-System.Object[]
-
 COPYHERR is a research project for building a private, local conversational model from your own exported WhatsApp chats. It turns a WhatsApp text export into supervised fine-tuning data, builds a vector memory store for retrieval-augmented generation, and connects the trained model to a WhatsApp Web bridge or CLI test harness.
 
 > Privacy first: this repository contains only code and templates. Do not commit raw chat exports, generated training data, vector databases, session files, model weights, or private relationship graphs.
